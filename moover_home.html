@@ -1,7 +1,27 @@
 
 <!DOCTYPE html>
 <html>
+<head>
+<center>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</center>
+</head>
 <body>
+
+<center>
+<h2> Name:</h2>
+<p id="uName"></p>
+<h3> Location: </h3>
+<p id="uLoc"></p>
+</center>
+<script>
+
+document.getElementById("uName").innerHTML="phName";
+document.getElementById("uLoc").innerHTML="phLoc";
+</script>
 
 
 <script>
@@ -11,6 +31,9 @@ function change_page(){
 
 
 </script>
+<br><br><br><br><br>
+<center>
 <input type="button" value="GO online" onclick="change_page()"/>
+</center>
 </body>
 </html>
