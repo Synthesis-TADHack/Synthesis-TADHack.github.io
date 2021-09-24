@@ -38,10 +38,25 @@
 
  <center>
  <button id= "btn" onclick="myFunction()">Try it</button>
-<p id="demo"></p>
-  
- </center>
-
+ 
+	<p id="demo"></p>
+	
+	</center>
+<span> Location: </span>
+ 
+ <input type="text"required id="autocomplete">
+ 
+ 
+<script>
+function initAutocomplete() {
+   new google.maps.places.Autocomplete(
+          (document.getElementById('autocomplete')),
+          {types: ['geocode']}
+   );
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdTX2LryXY0mSLNTwwRbVWdfqz8feDAzI&libraries=places&callback=initAutocomplete"
+                async defer></script>
 
 <center>
 <input id= "btn" type="button" value="Find Moover" onclick="change_page()"/>
