@@ -30,7 +30,8 @@
 <p id="11"></p>
 <p id="12"></p>
 <p id="13"></p>
-<p id="14"></p>
+
+
 
 
 
@@ -43,7 +44,7 @@
 	   sayHello()
 	   </script>
 
-  <body style= "background-color:  green;">
+  <body style= "background-color: lightblue;">
 <center>
   <br><br><br><br>
 
@@ -91,7 +92,7 @@ Ayoba.composeMessage(message);
 }
 function get9(){
 document.getElementById("7").innerHTML=lat;
-document.getElementById("8").innerHTML=lat;
+document.getElementById("8").innerHTML=lon;
 }
 function get10(){
 Ayoba.sendMessage("send");
@@ -101,7 +102,7 @@ function get11(){
 Ayoba.startConversation(jid);
 }
 function get12(){
-
+document.getElementById("10").innerHTML=Ayoba.getSelfJid();
 }
 function get13(){
 
@@ -134,7 +135,7 @@ function get13(){
   <button onclick = "get7()"> test getcountry2</button>
   <button onclick = "get8()"> test getcountry3</button>
   <button onclick = "get9()"> test getcountry4</button>
-  <button onclick = "get10()"> test getcountry5</button>
+  <button onclick = "get12()"> test getcosa5</button>
   <button onclick = "get11()"> test getcountry6</button>
 
 
