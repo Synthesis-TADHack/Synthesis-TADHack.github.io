@@ -49,14 +49,8 @@ function change_page(){
 function getNumber(){
 var hold=Ayoba.getMsisdn();
 	document.getElementById("num").innerHTML=hold;
-	document.getElementById("1").innerHTML=Ayoba.getCountry();
-	
-	
-	
-	
 	
 }
-
 function get1(){
 document.getElementById("2").innerHTML=Ayoba.getCanSendMessage();
 }
@@ -70,9 +64,12 @@ function get4(){
 document.getElementById("5").innerHTML=Ayoba.getContactName();
 }
 function get5(){
-document.getElementById("6").innerHTML="HELLO";
+document.getElementById("6").innerHTML=Ayoba.getContacts()+"HELLO";
 }
 
+function get6(){
+document.getElementById("1").innerHTML=Ayoba.getCountry();
+}
 
 </script>
 <center> 
@@ -84,7 +81,7 @@ document.getElementById("6").innerHTML="HELLO";
   <button onclick = "get3()"> Test Number4</button>
   <button onclick = "get4()"> Test Number5</button>
   <button onclick = "get5()"> Test Number6</button>
-
+<button onclick = "get6()"> country6</button>
   
   <br><br><br> <br><br><br> <br>
  <h6>version 1.0</h6>
