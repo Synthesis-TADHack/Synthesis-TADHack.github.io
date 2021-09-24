@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,31 +8,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </center>
 </head>
+  
+  
 <body>
 
+ <body style= "background-color:  E6FBFF;">
 <center>
-<h2> Name:</h2>
+  
+<br><br><br>
+  
+<img src = logo.png> <br><br><br> 
+  
+<h4>  Profile </h4>  
 <p id="uName"></p>
-<h3> Location: </h3>
+
 <p id="uLoc"></p>
 </center>
 <script>
 
-document.getElementById("uName").innerHTML="phName";
-document.getElementById("uLoc").innerHTML="phLoc";
-</script>
 
+text = "Name:" + " phName";
+ text1 = "Location:" + " phLoaction";
+document.getElementById("uName").innerHTML = text; 
+  document.getElementById("uLoc").innerHTML = text1; 
+</script>
 
 <script>
 function change_page(){
   window.location.href = "moover_chat.html";
 } 
+ 
+function check_bal(){
 
+}
+
+function moove_hist(){
+
+}
+ 
 
 </script>
+   
 <br><br><br><br><br>
+   
 <center>
-<input type="button" value="GO online" onclick="change_page()"/>
+<input id = "btn" type="button" value="    GO online    " onclick="change_page()"/>
+ <br><br>
 </center>
+  <center><input id = "btn" type="button" value=" Moove History " onclick="moove_hist()"/></center> 
 </body>
 </html>
