@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -13,16 +12,25 @@
 
 
 <body>
+    <body style= "background-color:  E6FBFF;">
 <center>
-<h2> Name:</h2>
+  
+<br><br><br>
+  
+<img src = logo.png> <br><br><br> 
+  
+<h4>  Profile </h4>  
 <p id="uName"></p>
-<h3> Location: </h3>
+
 <p id="uLoc"></p>
 </center>
 <script>
 
-document.getElementById("uName").innerHTML="phName";
-document.getElementById("uLoc").innerHTML="phLoc";
+
+text = "Name:" + " phName";
+ text1 = "Location:" + " phLoaction";
+document.getElementById("uName").innerHTML = text; 
+  document.getElementById("uLoc").innerHTML = text1; 
 </script>
 
 
@@ -39,16 +47,14 @@ function check_bal(){
 function moove_hist(){
 
 }
- 
-
 
 </script>
-<br><br><br><br><br>
+<br><br><br>
 <center>
 <div class = "btnGroup">
-<input type="button" value="Request moover" onclick="change_page()"/> <br><br>
-<input type="button" value="Check balance" onclick="check_bal()"/> <br><br>
-<input type="button" value="Moove History " onclick="moove_hist()"/> <br><br>
+<input id = "btn" type="button" value="Request moover" onclick="change_page()"/> <br><br>
+<input id = "btn"type="button" value=" Check balance " onclick="check_bal()"/> <br><br>
+<input id = "btn" type="button" value=" Moove History " onclick="moove_hist()"/> <br><br>
 </div>
 </center>
 </body>
