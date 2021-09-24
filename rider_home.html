@@ -1,7 +1,30 @@
 
 <!DOCTYPE html>
 <html>
+
+<head>
+<center>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</center>
+</head>
+
+
 <body>
+<center>
+<h2> Name:</h2>
+<p id="uName"></p>
+<h3> Location: </h3>
+<p id="uLoc"></p>
+</center>
+<script>
+
+document.getElementById("uName").innerHTML="phName";
+document.getElementById("uLoc").innerHTML="phLoc";
+</script>
+
 
 
 <script>
@@ -9,8 +32,24 @@ function change_page(){
   window.location.href = "request_moover.html";
 } 
 
+function check_bal(){
+
+}
+
+function moove_hist(){
+
+}
+ 
+
 
 </script>
-<input type="button" value="Request moover" onclick="change_page()"/>
+<br><br><br><br><br>
+<center>
+<div class = "btnGroup">
+<input type="button" value="Request moover" onclick="change_page()"/> <br><br>
+<input type="button" value="Check balance" onclick="check_bal()"/> <br><br>
+<input type="button" value="Moove History " onclick="moove_hist()"/> <br><br>
+</div>
+</center>
 </body>
 </html>
