@@ -43,9 +43,9 @@
 	
 	</center>
 <span> Location: </span>
- 
+ <form id="frm1" action="/action_page.php">
  <input type="text"required id="autocomplete">
- 
+ </form>
  
 <script>
 function initAutocomplete() {
@@ -61,6 +61,65 @@ function initAutocomplete() {
 <center>
 <input id= "btn" type="button" value="Find Moover" onclick="change_page()"/>
 </center>
+
+
+<p id="demo"></p>
+
+ 
+
+
+
+ 
+
+
+<script>
+function getLocation()
+{
+var jobValue = document.getElementsByName('txtJob')[0].value;
+
+ 
+
+
+document.getElementById("demo").innerHTML = jobValue;
+}
+
+function sConsole() {
+  
+  var x = document.getElementById("frm1");
+  var text = "";
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    text += x.elements[i].value + "<br>";
+  }
+  document.getElementById("demo").innerHTML = text;
+  
+
+}
+ 
+
+
+</script>
+<center>
+ 
+
+
+ <button id= "btn" onclick="getLocation()">Try it</button>
+
+<button id= "btn" onclick="sConsole()">tst</button>
+
+</center>
+<center> 
+    <br><br>
+	<div style="text-align:center;">
+    Current location:
+    <input type="text" id="locationInputText" name="txtJob">
+</div>
+
+
+
+
+
+
 
 
   
