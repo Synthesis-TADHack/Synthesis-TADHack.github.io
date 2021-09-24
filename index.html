@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<h3> "Testing all 6 added buttons 333" </h3>
+<h3> "Testing all 11 added buttons 333" </h3>
 <p id="num"></p>
 <p id="1"></p>
 <p id="2"></p>
@@ -23,6 +23,15 @@
 <p id="4"></p>
 <p id="5"></p>
 <p id="6"></p>
+<p id="7"></p>
+<p id="8"></p>
+<p id="9"></p>
+<p id="10"></p>
+<p id="11"></p>
+<p id="12"></p>
+<p id="13"></p>
+<p id="14"></p>
+
 
 
  <script src="../lib/microapp.js"></script>
@@ -64,7 +73,7 @@ var hold2=Ayoba.getSelfJid();
 document.getElementById("4").innerHTML=hold2;
 }
 function get4(){
-document.getElementById("5").innerHTML=Ayoba.getContactName();
+document.getElementById("5").innerHTML=Ayoba.getLanguage();
 }
 function get5(){
 document.getElementById("6").innerHTML=Ayoba.getContacts()+"HELLO";
@@ -73,6 +82,43 @@ document.getElementById("6").innerHTML=Ayoba.getContacts()+"HELLO";
 function get6(){
 document.getElementById("1").innerHTML=Ayoba.getCountry();
 }
+
+function get7(){
+Ayoba.composeMessage("compose");
+}
+function get8(){
+Ayoba.composeMessage(message);
+}
+function get9(){
+document.getElementById("7").innerHTML=lat;
+document.getElementById("8").innerHTML=lat;
+}
+function get10(){
+Ayoba.sendMessage("send");
+}
+var jid=sjdfhsjkfhladfhads3424;
+function get11(){
+Ayoba.startConversation(jid);
+}
+function get12(){
+
+}
+function get13(){
+
+}
+ function onLocationChanged(lat, lon) {
+    currentLatitude = lat
+    currentLongitude = lon
+	
+	
+ }
+
+
+
+
+
+
+
 
 </script>
 <center> 
@@ -84,7 +130,25 @@ document.getElementById("1").innerHTML=Ayoba.getCountry();
   <button onclick = "get3()"> Test getselfjid</button>
   <button onclick = "get4()"> Test getcontactname</button>
   <button onclick = "get5()"> Test getcontacts</button>
-<button onclick = "get6()"> test getcountry</button>
+  <button onclick = "get6()"> test getcountry</button>
+  <button onclick = "get7()"> test getcountry2</button>
+  <button onclick = "get8()"> test getcountry3</button>
+  <button onclick = "get9()"> test getcountry4</button>
+  <button onclick = "get10()"> test getcountry5</button>
+  <button onclick = "get11()"> test getcountry6</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   <br><br><br> <br><br><br> <br>
  <h6>version 1.0</h6>
