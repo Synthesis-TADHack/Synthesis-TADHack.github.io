@@ -56,9 +56,11 @@ document.getElementById("2").innerHTML=Ayoba.getCanSendMessage();
 }
 function get2(){
 document.getElementById("3").innerHTML=Ayoba.getLastTextMessage();
+document.getElementById("num").innerHTML="bak";
 }
 function get3(){
-document.getElementById("4").innerHTML=Ayoba.getSelfJid();
+var hold2=Ayoba.getSelfJid();
+document.getElementById("4").innerHTML=hold2;
 }
 function get4(){
 document.getElementById("5").innerHTML=Ayoba.getContactName();
@@ -76,12 +78,12 @@ document.getElementById("1").innerHTML=Ayoba.getCountry();
     <br><br>
   <button onclick = "change_page()"> Let's begin </button>
   <button onclick = "getNumber()"> Test Number1</button>
-  <button onclick = "get1()"> Test Number2</button>
-  <button onclick = "get2()"> Test Number3</button>
-  <button onclick = "get3()"> Test Number4</button>
-  <button onclick = "get4()"> Test Number5</button>
-  <button onclick = "get5()"> Test Number6</button>
-<button onclick = "get6()"> country6</button>
+  <button onclick = "get1()"> Test cansendmessage</button>
+  <button onclick = "get2()"> Test getlasttext</button>
+  <button onclick = "get3()"> Test getselfjid</button>
+  <button onclick = "get4()"> Test getcontactname</button>
+  <button onclick = "get5()"> Test getcontacts</button>
+<button onclick = "get6()"> test getcountry</button>
   
   <br><br><br> <br><br><br> <br>
  <h6>version 1.0</h6>
