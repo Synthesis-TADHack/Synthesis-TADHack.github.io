@@ -17,15 +17,15 @@
 <body>
 <h3> "belo:" </h3>
 <p id="uName"></p>
-
+<p id="num"></p>
 
  <script src="../lib/microapp.js"></script>
+ 
        <script>
 	   document.getElementById("uName").innerHTML="phName";
 	   var hold=Ayoba.getMsisdn()
 	   document.getElementById("uName").innerHTML=hold;
 	   sayHello()
-	   
 	   </script>
 
   <body style= "background-color:  green;">
@@ -39,6 +39,13 @@
 function change_page(){
   window.location.href = "momo_validate.html";
 } 
+
+function getNumber(){
+var hold=Ayoba.getMsisdn();
+ document.getElementById("num").innerHTML=hold;
+}
+
+
 </script>
 <center> 
     <br><br>
