@@ -37,11 +37,16 @@ function getNumber(){
 	return hold;
 }
 var durl=("https://moba-moover.herokuapp.com/drivers/").concat(hold);
-console.log(durl);
+
 
 
 
 var contactJid=callJid(); 
+console.log(durl);
+console.log(la);
+console.log(lo);
+console.log(contactJid);
+console.log(callJid());
 function loadDoc() {
 	
 	var data = JSON.stringify({
@@ -125,7 +130,7 @@ return savedvar;
 <br><br><br><br><br>
    
 <center>
-<input id = "btn" type="button" value="    GO online  5  " onclick="loadDoc()"/>
+<input id = "btn" type="button" value="    GO online  7  " onclick="loadDoc()"/>
  <br><br>
 </center>
   <center><input id = "btn" type="button" value=" Moove History " onclick="moove_hist()"/></center> 
