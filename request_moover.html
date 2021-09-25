@@ -119,11 +119,23 @@ function request(){
 	xhr.send(data);
 
 }
-
+globalLat=moover['lat'];
+globalLong=moover['long'];
+var d=1;
 function list_moovers(available_moovers){
     let text = "";
     available_moovers.forEach((moover) => {
-        text += moover['name'] + ", " + moover['phone_number'] + ", " + "lat: " + moover['lat'] + ", " + "long: "+ moover['long'];
+	
+	d=getDistanceFromLatLonInKm(lat,lon,moover['lat'],moover['long'])
+	
+	
+	
+	
+	
+	
+	
+	
+        text += moover['name'] + ", " + moover['phone_number'] + ", " + "D=" + d;//"lat: " + moover['lat'] + ", " + "long: "+ moover['long'];
         
         var div = document.createElement('button');
         div.id = moover['phone_number'];
@@ -158,7 +170,23 @@ function startConvo(driverJid){
     console.log("start");
 	Ayoba.startConversation(driverJid);
 }
+function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2-lat1);  // deg2rad below
+  var dLon = deg2rad(lon2-lon1); 
+  var a = 
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+    Math.sin(dLon/2) * Math.sin(dLon/2)
+    ; 
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+  var d = R * c; // Distance in km
+  return d;
+}
 
+function deg2rad(deg) {
+  return deg * (Math.PI/180)
+}
 function select_driver(moover){
     console.log(moover['jid']);
     var jid = moover["jid"];
@@ -249,7 +277,7 @@ document.getElementById("demo").innerHTML = selected;
     }
 
     function getMsisdn() {
-        var msisdn = Ayoba.getMsisdn();
+        var msnisdn = Ayoba.getMsisdn();
         document.getElementById("inputText").value = msisdn
         return msisdn
     }
