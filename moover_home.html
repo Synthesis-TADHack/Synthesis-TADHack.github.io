@@ -33,8 +33,9 @@
 function loadDoc() {
 	var data = JSON.stringify({
   "online": "true",
-  "lat": 9,
-  "long": 8
+  "lat": la,
+  "long": lo,
+  "Jid": contactJid
 	});
 
 	var xhr = new XMLHttpRequest();
@@ -60,7 +61,7 @@ function loadDoc() {
   
 <img src = logo.png> <br><br><br> 
   
-<h4>  Profile test get loc3 </h4>  
+<h4>  Profile test get loc4 </h4>  
 <p id="uName"></p>
 
 <p id="uLoc"></p>
@@ -78,16 +79,56 @@ document.getElementById("uName").innerHTML = text;
 function change_page(){
   window.location.href = "moover_chat.html";
 } 
- 
-function outputLoc(){
- document.getElementById("uLoc").innerHTML =x;
-}
-var x = "TEXT";
+
+var la = "TEXT";
+var lo = "TEXT";
  function onLocationChanged(lat, lon) {
-        x = lat.concat(", ").concat(lon);
+        la = lat
+		lo=lon;
+		var data = JSON.stringify({
+  "lat": la,
+  "long": lo
+  
+	});
+
+	var xhr = new XMLHttpRequest();
+	//xhr.withCredentials = true;
+
+	xhr.addEventListener("readystatechange", function() {
+	  if(this.readyState === 4) {
+		console.log(this.responseText);
+	  }
+	});
+
+	xhr.open("PUT", "https://moba-moover.herokuapp.com/drivers/0832002715");
+	xhr.setRequestHeader("Content-Type", "application/json");
+
+	xhr.send(data);
+		
+		
+		
+		
+		
     }
 function moove_hist(){
 
+}
+
+
+function getURLParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('?');
+    for (var i = 0; i < sURLVariables.length; i++) {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+        }
+    }
+}
+var contactJid="text";
+function getContactJid() {
+    var contactJid = getURLParameter("jid");
+    return contactJid
 }
  
 
