@@ -15,7 +15,7 @@
 <body style= "background-color:  E6F7FF;">
     
 <script src="../lib/microapp.js"></script>
-<h1 style="text-align:center;"><b><big>Request Moover<b><big></h1>
+  <h1 style="text-align:center;"><b><big>Request Moover<b><big></h1>
 
 <form id= myform name= "myform">
 <p> Request type <p>
@@ -34,24 +34,23 @@
 
 </form>
 
-<h3>Trip Details</h3>
-<span>Destination: </span><span id='dest'></span><br>
-<span>Current location: </span><span id='curr'></span>
+<h6>Trip Details<h6>
+  <centre>
+    <span>Destination: </span><span id='dest'></span><br>
+<span>Current location: </span><span id='curr'></span><br>
+  </centre>
+  
 
-
- <center>
- <button id= "btn" onclick="myFunction()">Try it</button>
-
-	
-	</center>
 <span> Destination Location: </span>
+  <span>
  <form id="frm1" action="/action_page.php">
+   
  <input type="text"required id="autocomplete">
- </form>
+ </form></span>
 
- <button id= "btn" onclick="sConsole()">Set Destination</button>
-
-
+  
+  <center> <button id= "btn" onclick="sConsole()">Set Destination</button></center>
+  
 <script>
 function initAutocomplete() {
    new google.maps.places.Autocomplete(
@@ -65,12 +64,6 @@ function initAutocomplete() {
 
 
 <p id="demo"></p>
-
- 
-
-
-
- 
 
 
 <script>
@@ -126,13 +119,6 @@ function list_moovers(available_moovers){
     available_moovers.forEach((moover) => {
 	
 	d=getDistanceFromLatLonInKm(globalLat,globalLong,moover['lat'],moover['long']);
-	
-	
-	
-	
-	
-	
-	
 	
         text += moover['name'] + ", " + moover['phone_number'] + ", " + "D=" +d.toFixed(2) +"km away" ;//"lat: " + moover['lat'] + ", " + "long: "+ moover['long'];
         var div = document.createElement('button');
@@ -191,43 +177,30 @@ function select_driver(moover){
     startConvo(jid);
 }
 
-
 </script>
 <center>
- 
-
-
-
 
 </center>
 <center> 
-    <br><br>
-	<div style="text-align:center;">
+    
+	<div >
     Current location:
     <input type="text" id="locationInputText" name="txtJob">
-</div>
+</div><br>
 <button id= "btn" onclick="getLocation()">Set Location</button><br>
 <br>
-<br>
+
 <center>
     <input id= "btn" type="button" value="Find Moover" onclick="request()"/>
 </center>
 <br>
-<br>
+
 <div>Moovers currently online</div>
 <br>
 <div>Select one to send a request and start a chat</div>
 <br>
 <div id="moovers"></div>
-
-
-
-
-
-
-
-
-  
+ 
 
 <script>
 function change_page(){
