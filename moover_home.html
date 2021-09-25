@@ -96,7 +96,7 @@ function loadDoc() {
 <h4>  Profile test get loc4 </h4>  
 <p id="uName"></p>
 
-<p id="uLoc"></p>
+<p id="varr"></p>
 </center>
 <script>
 
@@ -125,8 +125,11 @@ var lo = 20;
 
 		
     }
+	
+	
 function moove_hist(){
-
+var savedvar=sessionStorage.getItem('label');
+document.getElementById("varr").innerHTML = savedvar;
 }
 
 
@@ -143,6 +146,6 @@ function moove_hist(){
 <input id = "btn" type="button" value="    GO online  4  " onclick="loadDoc()"/>
  <br><br>
 </center>
-  <center><input id = "btn" type="button" value=" Moove History " onclick="outputLoc()"/></center> 
+  <center><input id = "btn" type="button" value=" Moove History " onclick="moove_hist()"/></center> 
 </body>
 </html>

@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<h3> "Testing compose" </h3>
+<h3> "Testing sending jid" </h3>
 <p id="num"></p>
 <p id="1"></p>
 <p id="2"></p>
@@ -99,6 +99,16 @@ document.getElementById("6").innerHTML="JID NUMBER:";
     document.getElementById("7").innerHTML = contactJid;
     return contactJid
 }
+int jj="32";
+
+sessionStorage.setItem('label', jj);
+
+
+
+
+
+
+
 
 function getContactName() {
 document.getElementById("6").innerHTML =window.location.search.substring(1);
