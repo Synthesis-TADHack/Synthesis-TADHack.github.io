@@ -106,25 +106,14 @@ var lo = "TEXT";
   "lat": la,
   "long": lo
 	});
-
-	var xhr = new XMLHttpRequest();
-	//xhr.withCredentials = true;
-
-	xhr.addEventListener("readystatechange", function() {
-	  if(this.readyState === 4) {
-		console.log(this.responseText);
-	  }
-	});
-	xhr.open("PUT", driverurl);
-	xhr.setRequestHeader("Content-Type", "application/json");
-	xhr.send(data);
+	loadDoc();
     }
+	
+	
+	
+	
 function moove_hist(){
 
-var xhr = new XMLHttpRequest();
-	xhr.open("GET", "https://moba-moover.herokuapp.com/drivers");
-	xhr.setRequestHeader("Content-Type", "application/json");
-console.log(xhr)
 }
 
 
