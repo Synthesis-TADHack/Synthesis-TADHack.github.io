@@ -29,7 +29,14 @@
 
 <script src="../lib/microapp.js"></script>
 <script>
-
+var hold="080";
+var x=getNumber();
+document.getElementById("tst").innerHTML = hold; 
+function getNumber(){
+  hold=Ayoba.getMsisdn();
+	return hold;
+}
+var durl=("https://moba-moover.herokuapp.com/drivers/").concat(hold);
 function loadDoc() {
 	var data = JSON.stringify({
   "online": "true",
@@ -47,7 +54,7 @@ function loadDoc() {
 	  }
 	});
 
-	xhr.open("PUT", "https://moba-moover.herokuapp.com/drivers/0832002715");
+	xhr.open("PUT", durl );
 	xhr.setRequestHeader("Content-Type", "application/json");
 
 	xhr.send(data);
@@ -113,13 +120,7 @@ function getContactJid() {
     contactJid = getURLParameter("jid");
     return contactJid
 }
-var hold="080";
-var x=getNumber();
-document.getElementById("tst").innerHTML = hold; 
-function getNumber(){
-  hold=Ayoba.getMsisdn();
-	return hold;
-}
+
  
 
 </script>
