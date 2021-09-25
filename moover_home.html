@@ -42,7 +42,6 @@ var contactJid1=getContactJid();
 var driverurl=("https://moba-moover.herokuapp.com/drivers/").concat(msdsin);
 	document.getElementById("uName").innerHTML = driverurl; 
 	
-	
 	var xhr = new XMLHttpRequest();
 	//xhr.withCredentials = true;
 
@@ -122,6 +121,10 @@ var lo = "TEXT";
     }
 function moove_hist(){
 
+var xhr = new XMLHttpRequest();
+	xhr.open("GET", "https://moba-moover.herokuapp.com/drivers");
+	xhr.setRequestHeader("Content-Type", "application/json");
+console.log(xhr)
 }
 
 
@@ -150,6 +153,6 @@ function getContactJid() {
 <input id = "btn" type="button" value="    GO online    " onclick="loadDoc()"/>
  <br><br>
 </center>
-  <center><input id = "btn" type="button" value=" Moove History " onclick="outputLoc()"/></center> 
+  <center><input id = "btn" type="button" value=" Moove History " onclick="moove_hist()"/></center> 
 </body>
 </html>
