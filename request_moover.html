@@ -134,7 +134,7 @@ function list_moovers(available_moovers){
 	
 	
 	
-        text += moover['name'] + ", " + moover['phone_number'] + ", " + "D=" + d;//"lat: " + moover['lat'] + ", " + "long: "+ moover['long'];
+        text += moover['name'] + ", " + moover['phone_number'] + ", " + "D=" +d.toFixed(2) +"km away" ;//"lat: " + moover['lat'] + ", " + "long: "+ moover['long'];
         var div = document.createElement('button');
         div.id = moover['phone_number'];
         div.innerHTML = text;
