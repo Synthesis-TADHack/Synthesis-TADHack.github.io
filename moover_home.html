@@ -50,8 +50,9 @@ function getURLParameter(sParam) {
     }
 }
 
-var contactJid="text";
-var y=getContactJid();
+
+var contactJid = "t1";
+var y= getContactJid();
 function getContactJid() {
     contactJid = getURLParameter("jid");
     return contactJid
@@ -59,6 +60,7 @@ function getContactJid() {
 
 document.getElementById("tst").innerHTML = contactJid; 
 function loadDoc() {
+	y= getContactJid()
 	var data = JSON.stringify({
   "online": "true",
   "lat": la,
