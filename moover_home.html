@@ -31,6 +31,7 @@
 <script>
 
 function loadDoc() {
+var contactJid1=getContactJid();
 	var data = JSON.stringify({
   "online": "true",
   "lat": la,
@@ -115,7 +116,7 @@ var lo = "TEXT";
 		console.log(this.responseText);
 	  }
 	});
-	xhr.open("PUT", "https://moba-moover.herokuapp.com/drivers/0832002715");
+	xhr.open("PUT", driverurl);
 	xhr.setRequestHeader("Content-Type", "application/json");
 	xhr.send(data);
     }
@@ -134,7 +135,7 @@ function getURLParameter(sParam) {
         }
     }
 }
-var contactJid="text";
+
 function getContactJid() {
     var contactJid = getURLParameter("jid");
     return contactJid
