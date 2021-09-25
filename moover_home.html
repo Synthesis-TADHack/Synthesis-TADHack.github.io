@@ -36,32 +36,22 @@ var lo = 20;
 
 
 function getNumber(){
-  hold=Ayoba.getMsisdn();
+ hold=Ayoba.getMsisdn();
 	return hold;
 }
 var x=getNumber();
+
 var durl=("https://moba-moover.herokuapp.com/drivers/").concat(hold);
 
-function callJid(){
-var savedvar=sessionStorage.getItem('label');
-document.getElementById("varr").innerHTML = savedvar;
-return savedvar;
-}
 
 
-var contactJid=callJid(); 
-console.log(durl);
-console.log(la);
-console.log(lo);
-console.log(contactJid);
-console.log(callJid());
+
 function loadDoc() {
-	
 	var data = JSON.stringify({
   "online": "true",
   "lat": la,
   "long": lo,
-  "jid": contactJid
+  "jid": "yfgufgh"
 	});
 
 	var xhr = new XMLHttpRequest();
@@ -72,7 +62,7 @@ function loadDoc() {
 		console.log(this.responseText);
 	  }
 	});
-	
+	//xhr.open("PUT", "https://moba-moover.herokuapp.com/drivers/0832002715");
 	xhr.open("PUT", durl );
 	xhr.setRequestHeader("Content-Type", "application/json");
 
@@ -108,25 +98,15 @@ function change_page(){
 
 
  function onLocationChanged(lat, lon) {
-        la = lat
+        la =lat;
 		lo=lon;
 		var data = JSON.stringify({
   "lat": la,
   "long": lo
   
 	});
-
-		
+loadDoc();
     }
-	
-	
-
-
-
-
-
-
- 
 
 </script>
    
