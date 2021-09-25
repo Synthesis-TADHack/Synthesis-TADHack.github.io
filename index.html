@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<h3> "Testing JID5" </h3>
+<h3> "Testing JID6" </h3>
 <p id="num"></p>
 <p id="1"></p>
 <p id="2"></p>
@@ -79,10 +79,12 @@ function onLocationChanged(lat, lon) {
 function onLocationChanged(lat, lon) {
         document.getElementById("locationInputText").value = lat.concat(", ").concat(lon)
     }
+	//var testurl="io./?jid=65c3kdflfc5c7c3hb30lc7615beda57031p2d2df@dev.ayoba.me";
+	
 	
 function getURLParameter(sParam) {
     var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
+    var sURLVariables = sPageURL.split('?');
     for (var i = 0; i < sURLVariables.length; i++) {
         var sParameterName = sURLVariables[i].split('=');
         if (sParameterName[0] == sParam) {
@@ -92,15 +94,16 @@ function getURLParameter(sParam) {
 }
 
 function getContactJid() {
-    var contactJid = getURLParameter("contactjid")
-    document.getElementById("7").innerHTML = contactJid
+document.getElementById("6").innerHTML="JID NUMBER:";
+    var contactJid = getURLParameter("jid");
+    document.getElementById("7").innerHTML = contactJid;
     return contactJid
 }
 
 function getContactName() {
-document.getElementById("6").innerHTML = contactNamewindow.location.search.substring(1)
-    var contactName = getURLParameter("contactname")
-    document.getElementById("8").innerHTML = contactName
+document.getElementById("6").innerHTML =window.location.search.substring(1);
+    var contactName = getURLParameter("contactname");
+    document.getElementById("8").innerHTML = contactName;
    }
 
 
