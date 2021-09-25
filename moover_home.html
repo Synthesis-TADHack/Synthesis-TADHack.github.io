@@ -57,7 +57,9 @@ function getContactJid() {
     contactJid = getURLParameter("jid");
     return contactJid
 }
-
+console.log(y);
+console.log(contactJid);
+console.log(window.location.search.substring(1))
 document.getElementById("tst").innerHTML = contactJid; 
 function loadDoc() {
 	y= getContactJid()
