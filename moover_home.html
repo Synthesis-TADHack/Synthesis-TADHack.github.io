@@ -30,15 +30,23 @@
 <script src="../lib/microapp.js"></script>
 <script>
 var hold="080";
-var x=getNumber();
+
+var la = 10;
+var lo = 20;
+
 
 function getNumber(){
   hold=Ayoba.getMsisdn();
 	return hold;
 }
+var x=getNumber();
 var durl=("https://moba-moover.herokuapp.com/drivers/").concat(hold);
 
-
+function callJid(){
+var savedvar=sessionStorage.getItem('label');
+document.getElementById("varr").innerHTML = savedvar;
+return savedvar;
+}
 
 
 var contactJid=callJid(); 
@@ -98,8 +106,7 @@ function change_page(){
   window.location.href = "moover_chat.html";
 } 
 
-var la = 10;
-var lo = 20;
+
  function onLocationChanged(lat, lon) {
         la = lat
 		lo=lon;
@@ -113,11 +120,7 @@ var lo = 20;
     }
 	
 	
-function callJid(){
-var savedvar=sessionStorage.getItem('label');
-document.getElementById("varr").innerHTML = savedvar;
-return savedvar;
-}
+
 
 
 
@@ -130,7 +133,7 @@ return savedvar;
 <br><br><br><br><br>
    
 <center>
-<input id = "btn" type="button" value="    GO online  7  " onclick="loadDoc()"/>
+<input id = "btn" type="button" value="    GO online  8  " onclick="loadDoc()"/>
  <br><br>
 </center>
   <center><input id = "btn" type="button" value=" Moove History " onclick="moove_hist()"/></center> 
