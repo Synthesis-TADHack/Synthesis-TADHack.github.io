@@ -91,23 +91,6 @@ var lo = 20;
   
 	});
 
-	var xhr = new XMLHttpRequest();
-	//xhr.withCredentials = true;
-
-	xhr.addEventListener("readystatechange", function() {
-	  if(this.readyState === 4) {
-		console.log(this.responseText);
-	  }
-	});
-
-	xhr.open("PUT", "https://moba-moover.herokuapp.com/drivers/0832002715");
-	xhr.setRequestHeader("Content-Type", "application/json");
-
-	xhr.send(data);
-		
-		
-		
-		
 		
     }
 function moove_hist(){
@@ -144,7 +127,7 @@ function getNumber(){
 <br><br><br><br><br>
    
 <center>
-<input id = "btn" type="button" value="    GO online  2  " onclick="loadDoc()"/>
+<input id = "btn" type="button" value="    GO online  3  " onclick="loadDoc()"/>
  <br><br>
 </center>
   <center><input id = "btn" type="button" value=" Moove History " onclick="outputLoc()"/></center> 
