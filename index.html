@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<h3> "Testing JID1" </h3>
+<h3> "Testing JID2" </h3>
 <p id="num"></p>
 <p id="1"></p>
 <p id="2"></p>
@@ -60,7 +60,7 @@ document.getElementById("5").innerHTML=Ayoba.getLanguage();
 
 function get6(){
 document.getElementById("2").innerHTML=Ayoba.getMsisdn();
-document.getElementById("1").innerHTML=url.getURLParameter(Jid);
+document.getElementById("1").innerHTML=getURLParameter();
 document.getElementById("3").innerHTML="2";
 }
 
@@ -79,7 +79,16 @@ function onLocationChanged(lat, lon) {
 function onLocationChanged(lat, lon) {
         document.getElementById("locationInputText").value = lat.concat(", ").concat(lon)
     }
-	
+	function getURLParameter() {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) {
+        var sParameterName = sURLVariables[i].split('=');
+        //if (sParameterName[0] == sParam) {
+           return sPageURL;//sParameterName[1];
+       // }
+    }
+}
 
 
 
