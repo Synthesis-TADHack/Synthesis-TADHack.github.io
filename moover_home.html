@@ -37,7 +37,11 @@ function loadDoc() {
   "long": lo,
   "Jid": contactJid
 	});
-
+	var msdsin=getNumber();
+var driverurl=("https://moba-moover.herokuapp.com/drivers/").concat(msdsin);
+	document.getElementById("uName").innerHTML = driverurl; 
+	
+	
 	var xhr = new XMLHttpRequest();
 	//xhr.withCredentials = true;
 
@@ -54,8 +58,7 @@ function loadDoc() {
 	
 	
 	
-	var driverurl=("https://moba-moover.herokuapp.com/drivers/").concat(msdsin);
-	document.getElementById("uName").innerHTML = driverurl; 
+	
 }
 </script>
  
@@ -66,7 +69,7 @@ function loadDoc() {
   
 <img src = logo.png> <br><br><br> 
   
-<h4>  Profile test get loc4 </h4>  
+<h4>  Profile test get loc5 </h4>  
 <p id="uName"></p>
 
 <p id="uLoc"></p>
@@ -89,7 +92,7 @@ function getNumber(){
 var hold=Ayoba.getMsisdn();
 	return hold;
 }
-var msdsin=getNumber();
+
 var driverurl=("https://moba-moover.herokuapp.com/drivers/").concat(msdsin);
 document.getElementById("uName").innerHTML = driverurl; 
 
