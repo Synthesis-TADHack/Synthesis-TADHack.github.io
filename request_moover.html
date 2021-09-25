@@ -13,7 +13,8 @@
 
 </head>
 <body style= "background-color:  E6F7FF;">
-
+    
+<script src="../lib/microapp.js"></script>
 <h1 style="text-align:center;"><b><big>Request Moover<b><big></h1>
 
 <form id= myform name= "myform">
@@ -127,7 +128,7 @@ function list_moovers(available_moovers){
         var div = document.createElement('button');
         div.id = moover['phone_number'];
         div.innerHTML = text;
-        div.onclick = ()=>{select_driver(moover)};
+        div.onclick = ()=>{select_driver(moover)}
         // div.className = 'border pad';
         document.getElementById('moovers').appendChild(div);
         document.getElementById('moovers').appendChild(document.createElement('br'));
