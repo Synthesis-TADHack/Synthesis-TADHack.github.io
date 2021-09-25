@@ -39,30 +39,11 @@ function getNumber(){
 var durl=("https://moba-moover.herokuapp.com/drivers/").concat(hold);
 
 
-function getURLParameter(sParam) {
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('?');
-    for (var i = 0; i < sURLVariables.length; i++) {
-        var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) {
-            return sParameterName[1];
-        }
-    }
-}
 
 
-var contactJid = "t1";
-var y= getContactJid();
-function getContactJid() {
-    contactJid = getURLParameter("jid");
-    return contactJid
-}
-console.log(y);
-console.log(contactJid);
-console.log(window.location.search.substring(1))
-document.getElementById("tst").innerHTML = contactJid; 
+var contactJid=callJid(); 
 function loadDoc() {
-	y= getContactJid()
+	
 	var data = JSON.stringify({
   "online": "true",
   "lat": la,
@@ -127,9 +108,10 @@ var lo = 20;
     }
 	
 	
-function moove_hist(){
+function callJid(){
 var savedvar=sessionStorage.getItem('label');
 document.getElementById("varr").innerHTML = savedvar;
+return savedvar;
 }
 
 
