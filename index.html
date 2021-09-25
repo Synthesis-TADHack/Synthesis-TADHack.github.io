@@ -15,7 +15,16 @@
 </head>
 
 <body>
-
+<h3> "Testing JID" </h3>
+<p id="num"></p>
+<p id="1"></p>
+<p id="2"></p>
+<p id="3"></p>
+<p id="4"></p>
+<p id="5"></p>
+<p id="6"></p>
+<p id="7"></p>
+<p id="8"></p>
  <script src="../lib/microapp.js"></script>
  
        <script>
@@ -50,7 +59,9 @@ document.getElementById("5").innerHTML=Ayoba.getLanguage();
 
 
 function get6(){
-document.getElementById("1").innerHTML=Ayoba.getCountry();
+document.getElementById("2").innerHTML="1";
+document.getElementById("1").innerHTML=getURLParameter(JIDNumber);
+document.getElementById("3").innerHTML="2";
 }
 
 function get9(){
@@ -68,6 +79,7 @@ function onLocationChanged(lat, lon) {
 function onLocationChanged(lat, lon) {
         document.getElementById("locationInputText").value = lat.concat(", ").concat(lon)
     }
+	
 
 
 
@@ -79,7 +91,7 @@ function onLocationChanged(lat, lon) {
 
 <center>
 	 <button id= "btn" onclick="change_page()">Let's begin</button>
-	  <button id= "btn" onclick="getLocation()">Test Number</button>
+	  <button id= "btn" onclick="get6()">Test JIDNumber</button>
   
   </center>
 
