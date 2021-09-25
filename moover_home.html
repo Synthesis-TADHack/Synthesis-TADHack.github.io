@@ -63,7 +63,8 @@ function loadDoc() {
 	xhr.setRequestHeader("Content-Type", "application/json");
 
 	xhr.send(data);
-	document.getElementById("varr").innerHTML = "Offline"; 
+	document.getElementById("varr").innerHTML = "Online: Please wait for a request from rider "; 
+	
 }
 function loadDoc2() {
 	var data = JSON.stringify({
@@ -85,7 +86,7 @@ function loadDoc2() {
 	xhr.setRequestHeader("Content-Type", "application/json");
 
 	xhr.send(data);
-	document.getElementById("varr").innerHTML = "Online: Please wait for a request from rider "; 
+	document.getElementById("varr").innerHTML = "Offline"; 
 }
 </script>
  
