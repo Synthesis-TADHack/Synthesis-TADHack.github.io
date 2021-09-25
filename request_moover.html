@@ -124,12 +124,13 @@ function list_moovers(available_moovers){
     available_moovers.forEach((moover) => {
         text += moover['name'] + ", " + moover['phone_number'] + ", " + "lat: " + moover['lat'] + ", " + "long: "+ moover['long'];
         
-        var div = document.createElement('div');
+        var div = document.createElement('button');
         div.id = moover['phone_number'];
         div.innerHTML = text;
         div.onclick = ()=>{select_driver(moover)}
         // div.className = 'border pad';
         document.getElementById('moovers').appendChild(div);
+        document.getElementById('moovers').appendChild(document.createElement('br'));
         text = ''  
     })
 
