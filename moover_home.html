@@ -2,10 +2,14 @@
 <html>
 <head>
 <center>
-	<title>Page Title</title>
-	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+       <style>
+           img {
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+           }
+       </style>
 	<link rel="stylesheet" href="./index.css">
 </center>
 </head>
@@ -19,7 +23,13 @@
 <h2>The XMLHttpRequest Object</h2>
 <button type="button" onclick="loadDoc()">Change Content</button>
 </div>
+
+
+
+
+<script src="microapp.js"></script>
 <script>
+
 function loadDoc() {
 	var data = JSON.stringify({
   "online": "true",
@@ -50,7 +60,7 @@ function loadDoc() {
   
 <img src = logo.png> <br><br><br> 
   
-<h4>  Profile </h4>  
+<h4>  Profile test get loc </h4>  
 <p id="uName"></p>
 
 <p id="uLoc"></p>
@@ -69,8 +79,8 @@ function change_page(){
   window.location.href = "moover_chat.html";
 } 
  
-function check_bal(){
-
+function outputLoc(){
+ document.getElementById("uLoc").innerHTML =lat.concat(", ").concat(lon);
 }
 
 function moove_hist(){
@@ -83,9 +93,9 @@ function moove_hist(){
 <br><br><br><br><br>
    
 <center>
-<input id = "btn" type="button" value="    GO online    " onclick="change_page()"/>
+<input id = "btn" type="button" value="    GO online    " onclick="loadDoc()"/>
  <br><br>
 </center>
-  <center><input id = "btn" type="button" value=" Moove History " onclick="moove_hist()"/></center> 
+  <center><input id = "btn" type="button" value=" Moove History " onclick="outputLoc()"/></center> 
 </body>
 </html>
