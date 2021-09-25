@@ -60,7 +60,7 @@ function loadDoc() {
   
 <img src = logo.png> <br><br><br> 
   
-<h4>  Profile test get loc2 </h4>  
+<h4>  Profile test get loc3 </h4>  
 <p id="uName"></p>
 
 <p id="uLoc"></p>
@@ -80,9 +80,12 @@ function change_page(){
 } 
  
 function outputLoc(){
- document.getElementById("uLoc").innerHTML =lat.concat(", ").concat(lon);
+ document.getElementById("uLoc").innerHTML =x;
 }
-
+var x = "TEXT";
+ function onLocationChanged(lat, lon) {
+        x = lat.concat(", ").concat(lon);
+    }
 function moove_hist(){
 
 }
