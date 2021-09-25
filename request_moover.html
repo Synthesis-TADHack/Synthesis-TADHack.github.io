@@ -119,14 +119,13 @@ function request(){
 	xhr.send(data);
 
 }
-globalLat=moover['lat'];
-globalLong=moover['long'];
+
 var d=1;
 function list_moovers(available_moovers){
     let text = "";
     available_moovers.forEach((moover) => {
 	
-	d=getDistanceFromLatLonInKm(lat,lon,moover['lat'],moover['long'])
+	d=getDistanceFromLatLonInKm(globalLat,globalLong,moover['lat'],moover['long']);
 	
 	
 	
@@ -136,7 +135,6 @@ function list_moovers(available_moovers){
 	
 	
         text += moover['name'] + ", " + moover['phone_number'] + ", " + "D=" + d;//"lat: " + moover['lat'] + ", " + "long: "+ moover['long'];
-        
         var div = document.createElement('button');
         div.id = moover['phone_number'];
         div.innerHTML = text;
@@ -345,8 +343,12 @@ document.getElementById("demo").innerHTML = selected;
      * In some border cases, also can receive lat=0.0, lon=0.0. Most of
      * cases, will mean Ayoba cannot retrieve the GPS coordinates.
      */
+	var globalLat=lat;
+	var globalLong=lon;
     function onLocationChanged(lat, lon) {
         document.getElementById("locationInputText").value = lat.concat(", ").concat(lon)
+		globalLong=lon;
+		globalLat=lat;
     }
 
     /*
