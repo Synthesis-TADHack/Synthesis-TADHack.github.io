@@ -37,7 +37,7 @@ function getNumber(){
 	return hold;
 }
 var durl=("https://moba-moover.herokuapp.com/drivers/").concat(hold);
-
+console.log(durl);
 
 
 
@@ -59,7 +59,7 @@ function loadDoc() {
 		console.log(this.responseText);
 	  }
 	});
-
+	
 	xhr.open("PUT", durl );
 	xhr.setRequestHeader("Content-Type", "application/json");
 
@@ -125,7 +125,7 @@ return savedvar;
 <br><br><br><br><br>
    
 <center>
-<input id = "btn" type="button" value="    GO online  4  " onclick="loadDoc()"/>
+<input id = "btn" type="button" value="    GO online  5  " onclick="loadDoc()"/>
  <br><br>
 </center>
   <center><input id = "btn" type="button" value=" Moove History " onclick="moove_hist()"/></center> 
