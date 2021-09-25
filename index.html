@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<h3> "Testing sending jid" </h3>
+
 <p id="num"></p>
 <p id="1"></p>
 <p id="2"></p>
@@ -27,12 +27,7 @@
 <p id="8"></p>
  <script src="../lib/microapp.js"></script>
  
-       <script>
-	   document.getElementById("uName").innerHTML="phName";
-	   var hold=Ayoba.getMsisdn()
-	   document.getElementById("uName").innerHTML=hold;
-	   sayHello()
-	   </script>
+       
 
   <body style= "background-color: #E6F7FF;">
 <center>
@@ -94,9 +89,9 @@ function getURLParameter(sParam) {
 }
 
 function getContactJid() {
-document.getElementById("6").innerHTML="JID NUMBER:";
+//document.getElementById("6").innerHTML="JID NUMBER:";
     var contactJid = getURLParameter("jid");
-    document.getElementById("7").innerHTML = contactJid;
+   // document.getElementById("7").innerHTML = contactJid;
     return contactJid
 }
 var jj=getContactJid();
@@ -139,9 +134,6 @@ Ayoba.startConversation("75241649762c404c1264df798414bf23c1592d3f@dev.ayoba.me")
 
 <center>
 	 <button id= "btn" onclick="change_page()">Let's begin</button>
-	  <button id= "btn" onclick="getContactJid()">Test JIDNumber</button>
-	  <button id= "btn" onclick="startConvo()">Test start convo</button>
-  
   </center>
 
   <br><br><br> <br><br><br> <br>

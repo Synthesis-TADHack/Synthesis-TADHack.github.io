@@ -63,6 +63,29 @@ function loadDoc() {
 	xhr.setRequestHeader("Content-Type", "application/json");
 
 	xhr.send(data);
+	document.getElementById("varr").innerHTML = "Offline"; 
+}
+function loadDoc2() {
+	var data = JSON.stringify({
+  "online": "false",
+  "lat": la,
+  "long": lo
+	});
+
+	var xhr = new XMLHttpRequest();
+	//xhr.withCredentials = true;
+
+	xhr.addEventListener("readystatechange", function() {
+	  if(this.readyState === 4) {
+		console.log(this.responseText);
+	  }
+	});
+	//xhr.open("PUT", "https://moba-moover.herokuapp.com/drivers/0832002715");
+	xhr.open("PUT", durl );
+	xhr.setRequestHeader("Content-Type", "application/json");
+
+	xhr.send(data);
+	document.getElementById("varr").innerHTML = "Online: Please wait for a request from rider "; 
 }
 </script>
  
@@ -75,10 +98,12 @@ function loadDoc() {
   
 <h3> Your Profile  </h3>  
 <p id="uName"></p>
-
+<p> Status: </p>
 <p id="varr"></p>
+
 </center>
 <script>
+document.getElementById("varr").innerHTML = "Offline"; 
 /*
 
 text = "Name:" + " phName";
@@ -110,8 +135,10 @@ loadDoc();
 <br><br><br><br><br>
    
 <center>
-<input id = "btn" type="button" value="    GO online  8  " onclick="loadDoc()"/>
+<input id = "btn" type="button" value="Go online" onclick="loadDoc()"/>
  <br><br>
+ <input id = "btn" type="button" value="Go offline" onclick="loadDoc2()"/>
+ <br>
 </center>
   <center><input id = "btn" type="button" value=" Moove History " onclick="moove_hist()"/></center> 
 </body>
