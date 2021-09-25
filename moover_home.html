@@ -13,12 +13,12 @@
 	<link rel="stylesheet" href="./index.css">
 </center>
 </head>
-   
+  
   
 <body>
 
  <body style= "background-color:  #E6FBFF;">
- 
+ <p id="tst"></p>
  <div id="demo">
 <h2>The XMLHttpRequest Object</h2>
 <button type="button" onclick="loadDoc()">Change Content</button>
@@ -29,18 +29,13 @@
 
 <script src="../lib/microapp.js"></script>
 <script>
-var msdsin=getNumber();
-var contactJid1 = getContactJid();
-var la = 5;
-var lo = 6;
-var driverurl=("https://moba-moover.herokuapp.com/drivers/").concat(msdsin);
+
 function loadDoc() {
 	var data = JSON.stringify({
-	
   "online": "true",
   "lat": la,
   "long": lo,
-  "jid": contactJid1
+  "Jid": contactJid
 	});
 
 	var xhr = new XMLHttpRequest();
@@ -52,14 +47,11 @@ function loadDoc() {
 	  }
 	});
 
-	xhr.open("PUT", driverurl);
+	xhr.open("PUT", "https://moba-moover.herokuapp.com/drivers/0832002715");
 	xhr.setRequestHeader("Content-Type", "application/json");
 
 	xhr.send(data);
 }
-
-
-
 </script>
  
  
@@ -69,7 +61,7 @@ function loadDoc() {
   
 <img src = logo.png> <br><br><br> 
   
-<h4>  Profile test get loc5 </h4>  
+<h4>  Profile test get loc4 </h4>  
 <p id="uName"></p>
 
 <p id="uLoc"></p>
@@ -88,29 +80,36 @@ function change_page(){
   window.location.href = "moover_chat.html";
 } 
 
-function getNumber(){
-var hold=Ayoba.getMsisdn();
-	return hold;
-}
-
-var driverurl=("https://moba-moover.herokuapp.com/drivers/").concat(msdsin);
-document.getElementById("uName").innerHTML = driverurl; 
-
-
-
+var la = "TEXT";
+var lo = "TEXT";
  function onLocationChanged(lat, lon) {
-        la =lat;
+        la = lat
 		lo=lon;
 		var data = JSON.stringify({
   "lat": la,
   "long": lo
+  
 	});
-	loadDoc();
+
+	var xhr = new XMLHttpRequest();
+	//xhr.withCredentials = true;
+
+	xhr.addEventListener("readystatechange", function() {
+	  if(this.readyState === 4) {
+		console.log(this.responseText);
+	  }
+	});
+
+	xhr.open("PUT", "https://moba-moover.herokuapp.com/drivers/0832002715");
+	xhr.setRequestHeader("Content-Type", "application/json");
+
+	xhr.send(data);
+		
+		
+		
+		
+		
     }
-	
-	
-	
-	
 function moove_hist(){
 
 }
@@ -126,10 +125,17 @@ function getURLParameter(sParam) {
         }
     }
 }
-
+var contactJid="text";
 function getContactJid() {
-    var contactJid = getURLParameter("jid");
+    contactJid = getURLParameter("jid");
     return contactJid
+}
+var hold="080";
+var x=getNumber();
+document.getElementById("tst").innerHTML = hold; 
+function getNumber(){
+  hold=Ayoba.getMsisdn();
+	return hold;
 }
  
 
@@ -138,9 +144,9 @@ function getContactJid() {
 <br><br><br><br><br>
    
 <center>
-<input id = "btn" type="button" value="    GO online1    " onclick="loadDoc()"/>
+<input id = "btn" type="button" value="    GO online    " onclick="loadDoc()"/>
  <br><br>
 </center>
-  <center><input id = "btn" type="button" value=" Moove History " onclick="moove_hist()"/></center> 
+  <center><input id = "btn" type="button" value=" Moove History " onclick="outputLoc()"/></center> 
 </body>
 </html>
