@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,19 +33,24 @@
 
 </form>
 
+<h3>Trip Details</h3>
+<span>Destination: </span><span id='dest'></span><br>
+<span>Current location: </span><span id='curr'></span>
 
 
  <center>
  <button id= "btn" onclick="myFunction()">Try it</button>
- 
-	<p id="demo"></p>
+
 	
 	</center>
-<span> Location: </span>
+<span> Destination Location: </span>
  <form id="frm1" action="/action_page.php">
  <input type="text"required id="autocomplete">
  </form>
- 
+
+ <button id= "btn" onclick="sConsole()">Set Destination</button>
+
+
 <script>
 function initAutocomplete() {
    new google.maps.places.Autocomplete(
@@ -57,10 +61,6 @@ function initAutocomplete() {
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdTX2LryXY0mSLNTwwRbVWdfqz8feDAzI&libraries=places&callback=initAutocomplete"
                 async defer></script>
-
-<center>
-<input id= "btn" type="button" value="Find Moover" onclick="change_page()"/>
-</center>
 
 
 <p id="demo"></p>
@@ -73,15 +73,18 @@ function initAutocomplete() {
 
 
 <script>
+var destination = "";
+var current_location = "";
+var available_moovers = []
+
 function getLocation()
 {
 var jobValue = document.getElementsByName('txtJob')[0].value;
-
- 
-
-
-document.getElementById("demo").innerHTML = jobValue;
+current_location = jobValue
+console.log(current_location)
+document.getElementById("curr").innerHTML = jobValue;
 }
+
 
 function sConsole() {
   
@@ -89,13 +92,75 @@ function sConsole() {
   var text = "";
   var i;
   for (i = 0; i < x.length ;i++) {
+    destination += x.elements[i].value;
     text += x.elements[i].value + "<br>";
   }
-  document.getElementById("demo").innerHTML = text;
-  
+  document.getElementById("dest").innerHTML = text;
+}
+
+function request(){
+   var data = JSON.stringify({
+        "destination": destination,
+        "location": current_location,
+    });
+
+	var xhr = new XMLHttpRequest();
+
+	xhr.addEventListener("readystatechange", function() {
+	  if(this.readyState === 4) {
+        available_moovers = JSON.parse(this.responseText)
+        list_moovers(available_moovers);
+	  }
+	});
+
+	xhr.open("GET", "https://moba-moover.herokuapp.com/drivers");
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.send(data);
 
 }
+
+function list_moovers(available_moovers){
+    let text = "";
+    available_moovers.forEach((moover) => {
+        text += moover['name'] + ", " + moover['phone_number'] + ", " + "lat: " + moover['lat'] + ", " + "long: "+ moover['long'];
+        
+        var div = document.createElement('div');
+        div.id = moover['phone_number'];
+        div.innerHTML = text;
+        div.onclick = ()=>{select_driver(moover)}
+        // div.className = 'border pad';
+        document.getElementById('moovers').appendChild(div);
+        text = ''  
+    })
+
+}
+
+function getURLParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('?');
+    for (var i = 0; i < sURLVariables.length; i++) {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+        }
+    }
+}
+
+function getContactJid() {
+    var contactJid = getURLParameter("jid");
+    return contactJid
+}
+
  
+function startConvo(driverJid){
+	Ayoba.startConversation(driverJid);
+}
+
+function select_driver(moover){
+    console.log(moover['jid'])
+    var jid = moover["jid"]
+    startConvo(jid)
+}
 
 
 </script>
@@ -103,9 +168,7 @@ function sConsole() {
  
 
 
- <button id= "btn" onclick="getLocation()">Try it</button>
 
-<button id= "btn" onclick="sConsole()">tst</button>
 
 </center>
 <center> 
@@ -114,6 +177,17 @@ function sConsole() {
     Current location:
     <input type="text" id="locationInputText" name="txtJob">
 </div>
+<button id= "btn" onclick="getLocation()">Set Location</button><br>
+<br>
+<br>
+<center>
+    <input id= "btn" type="button" value="Find Moover" onclick="request()"/>
+</center>
+<br>
+<br>
+<div>List of Available Moovers</div>
+<br>
+<div id="moovers"></div>
 
 
 
