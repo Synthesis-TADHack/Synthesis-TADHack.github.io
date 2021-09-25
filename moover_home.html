@@ -29,17 +29,18 @@
 
 <script src="../lib/microapp.js"></script>
 <script>
-
+var msdsin="27398472398";//getNumber();
+var contactJid1 = "aaaaa";
 function loadDoc() {
-var contactJid1=getContactJid();
+//var contactJid1=getContactJid();
 	var data = JSON.stringify({
-  "online": "true",
+  "online": "false",
   "lat": la,
   "long": lo,
   "Jid": contactJid1
 	});
-	var msdsin=getNumber();
-var driverurl=("https://moba-moover.herokuapp.com/drivers/").concat(msdsin);
+	
+var driverurl="https://moba-moover.herokuapp.com/drivers/+27847725087"; //("https://moba-moover.herokuapp.com/drivers/").concat(msdsin);
 	document.getElementById("uName").innerHTML = driverurl; 
 	
 	var xhr = new XMLHttpRequest();
@@ -53,12 +54,7 @@ var driverurl=("https://moba-moover.herokuapp.com/drivers/").concat(msdsin);
 
 	xhr.open("PUT", driverurl);
 	xhr.setRequestHeader("Content-Type", "application/json");
-
 	xhr.send(data);
-	
-	
-	
-	
 }
 </script>
  
@@ -100,7 +96,7 @@ document.getElementById("uName").innerHTML = driverurl;
 var la = "TEXT";
 var lo = "TEXT";
  function onLocationChanged(lat, lon) {
-        la = lat
+        la =lat;
 		lo=lon;
 		var data = JSON.stringify({
   "lat": la,
