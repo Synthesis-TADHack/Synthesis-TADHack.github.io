@@ -31,8 +31,7 @@
 
   <body style= "background-color: #E6F7FF;">
 
-  <br><br><br><br>
-  <br><br><br><br>  <br>
+ 
  
 
 <br>
@@ -89,9 +88,9 @@ function getURLParameter(sParam) {
 }
 
 function getContactJid() {
-//document.getElementById("6").innerHTML="JID NUMBER:";
+document.getElementById("6").innerHTML="JID NUMBER:";
     var contactJid = getURLParameter("jid");
-   // document.getElementById("7").innerHTML = contactJid;
+    document.getElementById("7").innerHTML = contactJid;
     return contactJid
 }
 var jj=getContactJid();
@@ -136,6 +135,7 @@ Ayoba.startConversation("75241649762c404c1264df798414bf23c1592d3f@dev.ayoba.me")
   <img src = logo.png> 
   <br><br> <br><br><br> <br> 
 	 <button id= "btn" onclick="change_page()">Let's begin</button> 
+	 <button id= "btn" onclick="getContactJid()">GetJid</button>
   <br><br><br> <br><br><br>
   <br> <br><br><br> <br><br><br> <br> 
  
