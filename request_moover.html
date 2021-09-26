@@ -13,45 +13,44 @@
     </style>
 
 </head>
-<body style= "background-color:  E6F7FF;">
+<body style= "background-color:  #E6F7FF;">
     
 <script src="../lib/microapp.js"></script>
   <h1 style="text-align:center;"><b><big>Request Moover<b><big></h1>
-
+<center>
 <form id= myform name= "myform">
-<p> Request type <p>
-<input type= "radio" id= "type1" name= "type" value="HTE">
-<label for= "HTE"> Hospital transport (Emergency)</label><br>
+<p style="color:orange;"> Request type <p>
+<input class='request-type' type= "radio" id= "type1" name= "type" value="HTE">
+<label style="font-size:15px;" for= "HTE"> Hospital transport (Emergency)</label><br>
 
 <input type= "radio" id= "type2" name= "type" value="HTNE">
-<label for= "HTNE"> Hospital transport (Non-Emergency)</label><br>
+<label style="font-size:15px;" for= "HTNE"> Hospital transport (Non-Emergency)</label><br>
 
 <input type= "radio" id= "type3" name= "type" value="Pharmacy pickup">
-<label for= "HTE"> Pharmacy pickup </label><br>
+<label style="font-size:15px;" for= "HTE"> Pharmacy pickup </label><br>
 
 <input type= "radio" id= "type4" name= "type" value="Tra">
-<label for= "Tra"> Transport </label><br>
+<label style="font-size:15px;" for= "Tra"> Transport </label><br>
 
 
 </form>
+<hr>
+<p style="color:orange;">Trip Details<p>
 
-<h6>Trip Details<h6>
-  <centre>
-    <span>Destination: </span><span id='dest'></span><br>
-<span>Current location: </span><span id='curr'></span><br>
-  </centre>
+<span style="font-size:15px;">Destination: </span><span id='dest' style="font-size:15px;"></span><br>
+<span style="font-size:15px;">My Location: </span><span id='curr' style="font-size:15px;"></span><br>
   
+</center>
 <center>
 
-<span> Destination Location: </span>
+<!-- <span> Destination Location: </span> -->
 
  <form id="frm1" action="/action_page.php">
-
+    <div> Destination:
  <input type="text"required id="autocomplete">
-
+</div>
  </form>
-
-
+<br>
 
  <button id= "btn" onclick="sConsole()">Set Destination</button>
 
@@ -93,7 +92,7 @@ function sConsole() {
   var i;
   for (i = 0; i < x.length ;i++) {
     destination += x.elements[i].value;
-    text += x.elements[i].value + "<br>";
+    text += x.elements[i].value;
   }
   document.getElementById("dest").innerHTML = text;
 }
@@ -190,7 +189,7 @@ function select_driver(moover){
 <center> 
     
 	<div >
-    Current location:
+    My Location:
     <input type="text" id="locationInputText" name="txtJob">
 </div><br>
 <button id= "btn" onclick="getLocation()">Set Location</button><br>
@@ -199,11 +198,11 @@ function select_driver(moover){
 <center>
     <input id= "btn" type="button" value="Find Moover" onclick="request()"/>
 </center>
-<br>
+<hr>
 
-<div>Moovers currently online</div>
+<div style="color:orange;">Moovers currently online</div>
 <br>
-<div>Select one to send a request and start a chat</div>
+<div style="font-size:20px; FONT-WEIGHT: lighter;">Select one to send a request and start a chat</div>
 <br>
 <div id="moovers"></div>
  
